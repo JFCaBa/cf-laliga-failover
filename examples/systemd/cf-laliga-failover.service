@@ -1,0 +1,9 @@
+[Unit]
+Description=cf-laliga-failover (una pasada)
+
+[Service]
+Type=oneshot
+StateDirectory=cf-laliga-failover
+WorkingDirectory=/opt/cf-laliga-failover
+EnvironmentFile=/opt/cf-laliga-failover/.env
+ExecStart=/usr/bin/node dist/bin.js --apply --cambiar-dns

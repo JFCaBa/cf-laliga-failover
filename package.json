@@ -1,0 +1,24 @@
+{
+  "name": "cf-laliga-failover",
+  "version": "1.0.0",
+  "description": "Watchdog que pasa tu web de Cloudflare naranja a gris cuando LaLiga bloquea las IPs de Cloudflare en España, y la devuelve a naranja cuando termina.",
+  "license": "MIT",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "bin": { "cf-laliga-failover": "dist/bin.js" },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["cloudflare", "laliga", "hayahora", "failover", "dns", "españa"],
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0",
+    "vitest": "^3.0.0"
+  }
+}
